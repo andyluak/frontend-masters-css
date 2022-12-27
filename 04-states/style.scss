@@ -35,7 +35,7 @@ body {
   }
 
   &[data-state='subscribe'] {
-    // Add an animation here
+    animation: slide-up 1s both;
   }
 
   &[data-state='success'] {

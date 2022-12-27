@@ -10,7 +10,7 @@
   <body>
     <form class="ui-form" data-state="subscribe">
       <input class="ui-input" type="email" placeholder="your@email.com" />
-      <button class="ui-button" type="button" onclick="setState('subscribing')">
+      <button class="ui-button" type="button">
         <span>Subscribe</span>
         <span>Subscribing</span>
         <span>Success!</span>
@@ -20,7 +20,35 @@
   </body>
   <script>
     const form = document.querySelector('.ui-form');
+    const button = document.querySelector('.ui-button');
+    const input = document.querySelector('.ui-input');
 
-    // ...
+    const machine = {
+      startState: 'subscribe',
+      states: {
+        subscribe: {
+          on: {
+            CLICK: 'subscribing',
+          },
+        },
+        subscribing: {
+          on: {
+            SUCCESS: 'success',
+            ERROR: 'error',
+          },
+        },
+        success: {
+          on: {
+            SUBSCRIBE: 'subscribe',
+          },
+        },
+        error: {
+          on: {
+            SUBSCRIBE: 'subscribe',
+          },
+        },
+      },
+    }
+
   </script>
 </html>

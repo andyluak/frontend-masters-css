@@ -15,6 +15,18 @@ body {
   color: var(--fg-color);
 }
 
+#app {
+  --bg-color: hsla(0, 48%, 32%, 0.978);
+  &[data-state="loading"] {
+    --bg-color: hsla(0, 6%, 43%, 0.978);
+  }
+  &[data-state="success"] {
+    --bg-color: hsla(149, 45%, 60%, 0.978);
+  }
+  transition: background-color 0.3s var(--easing);
+  background-color: var(--bg-color);
+}
+
 a {
   border: var(--primary-color) 1px solid;
 }
@@ -48,6 +60,27 @@ ul {
   }
   &:nth-child(3) {
     animation-delay: calc(var(--duration) * 2 - var(--stagger) * 2);
+  }
+}
+
+.button {
+  appearance: none;
+  background: rgb(61, 61, 155);
+  color: white;
+  font-weight: bold;
+  padding: 2rem 3rem;
+  border: none;
+
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    transition-duration: 0.15s;
+    transform: scale(0.95);
+    opacity: 1;
   }
 }
 
