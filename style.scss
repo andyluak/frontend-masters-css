@@ -1,13 +1,21 @@
-@import './styles/base.scss';
+@import "./styles/base.scss";
+
+:root {
+  --primary-color: #a08a8a;
+  --fg-color: #fff;
+  --duration: 1s;
+  --easing: ease-out;
+}
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   padding: 5vmin;
-  background-color: #f4f4f4;
+  background-color: var(--primary-color, red);
+  color: var(--fg-color);
 }
 
 a {
-  color: blue;
+  border: var(--primary-color) 1px solid;
 }
 
 h1 {
@@ -28,7 +36,7 @@ ul {
   width: 5vmin;
   border-radius: 50%;
   background: radial-gradient(circle at bottom right, #fb2324, #fe932a);
-  animation: slide-right 1s ease-out infinite;
+  animation: slide-right var(--duration, 1s) var(--easing, ease-) infinite;
 }
 
 @keyframes slide-right {
