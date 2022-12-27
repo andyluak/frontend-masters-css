@@ -35,29 +35,43 @@ ul {
   height: 5vmin;
   width: 5vmin;
   border-radius: 50%;
-  left: 50vw;
-  // animation: slide-right var(--duration, 1s) var(--easing, ease-) infinite;
-  background: red;
-  transform: scale(1);
-  transition-property: background, transform, opacity;
-  transition-timing-function: ease-in, ease-out;
-  opacity: 1;
-  transition-duration: 1s;
+  background-color: var(--fg-color);
+  left: 20vw;
+  animation-name: move-like-jagger, red-to-green;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: 5;
+  animation-direction: alternate-reverse;
 
-  &:hover {
-    transition-delay: 0.5s;
-    transition-duration: 1s, 3s;
-    transform: scale(4);
-    background: blue;
-    opacity: 0.5;
+}
+
+@keyframes move-like-jagger {
+  from,
+  to {
+    transform: none;
+  }
+
+  25% {
+    animation-timing-function: ease-in;
+    transform: translateY(20vh);
+  }
+
+  50% {
+    animation-timing-function: ease-out;
+    transform: translateX(20vh) translateY(20vh);
+  }
+
+  75% {
+    transform: translateX(20vh);
   }
 }
 
-@keyframes slide-right {
+@keyframes red-to-green {
   from {
-    transform: translateX(0);
+    background-color: red;
   }
+
   to {
-    transform: translateX(50vw);
+    background-color: green;
   }
 }
