@@ -35,8 +35,22 @@ ul {
   height: 5vmin;
   width: 5vmin;
   border-radius: 50%;
-  background: radial-gradient(circle at bottom right, #fb2324, #fe932a);
-  animation: slide-right var(--duration, 1s) var(--easing, ease-) infinite;
+  left: 50vw;
+  // animation: slide-right var(--duration, 1s) var(--easing, ease-) infinite;
+  background: red;
+  transform: scale(1);
+  transition-property: background, transform, opacity;
+  transition-timing-function: ease-in, ease-out;
+  opacity: 1;
+  transition-duration: 1s;
+
+  &:hover {
+    transition-delay: 0.5s;
+    transition-duration: 1s, 3s;
+    transform: scale(4);
+    background: blue;
+    opacity: 0.5;
+  }
 }
 
 @keyframes slide-right {
