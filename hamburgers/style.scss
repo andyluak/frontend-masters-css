@@ -1,0 +1,66 @@
+.button {
+  border:0;
+  background-color: transparent;
+}
+
+.button-one .line {
+  transform-origin: center;
+}
+
+.button-one[aria-expanded="false"] .line {
+  transition: 
+    y 300ms ease-in 300ms,
+    transform 300ms ease-in,
+    opacity 150ms ease-in 300ms;
+  ;
+}
+
+.button-one[aria-expanded="true"] .line {
+  transition: 
+    y 300ms ease-in,
+    transform 300ms ease-in 300ms,
+    opacity 150ms ease-in;
+  ;
+}
+
+.button-one:hover .top {
+  y: 45;
+  transform: rotate(45deg);
+}
+
+.button-one:hover .middle {
+  opacity: 0;
+}
+
+.button-one:hover .bottom {
+  y: 45;
+  transform: rotate(-45deg);
+}
+
+.button-one[aria-expanded="true"] .top {
+  y: 45;
+  transform: rotate(45deg);
+}
+
+.button-one[aria-expanded="true"] .middle {
+  opacity: 0;
+}
+
+.button-one[aria-expanded="true"] .bottom {
+  y: 45;
+  transform: rotate(-45deg);
+}
+
+.button-one[aria-expanded="false" ] .top {
+  y: 25;
+  transform: rotate(0deg);
+}
+
+.button-one[aria-expanded="false" ] .middle {
+  opacity: 1;
+}
+
+.button-one[aria-expanded="false" ] .bottom {
+  y: 65;
+  transform: rotate(0deg);
+}
